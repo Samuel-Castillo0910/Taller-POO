@@ -1,5 +1,8 @@
 package Main;
 
+import Score.MatchStatus;
+import Score.PlayerScore;
+
 public class Match {
 
     private int id; //ID de la partida
