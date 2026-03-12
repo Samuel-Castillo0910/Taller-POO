@@ -1,4 +1,4 @@
-import Main.Rank;
+package Main;
 
 import java.util.Objects;
 //Creacion de Atributos
@@ -88,7 +88,7 @@ public class Player {
      */
     @Override
     public String toString() {
-        return "Player{" +
+        return "Main.Player{" +
                 "id=" + id +
                 ", level=" + level +
                 ", wins=" + wins +

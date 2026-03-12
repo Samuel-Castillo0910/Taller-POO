@@ -1,15 +1,17 @@
 package Score;
 
+import Main.Player;
+
 public class PlayerScore {
-    private player player;
+    private Player player;
     private Score score;
 
-    public PlayerScore(player player, Score score) {
+    public PlayerScore(Player player, Score score) {
         this.player = player;
         this.score = score;
     }
 
-    public player getPlayer() {
+    public Player getPlayer() {
         return player;
     }
 
