@@ -1,0 +1,5 @@
+package Main;
+
+public enum Rank {
+    IRON, BRONZE, SILVER, GOLD, PLATINUM, EMERALD, DIAMOND, MASTER, GRANDMASTER, CHALLENGER;
+}
