@@ -37,4 +37,15 @@ public class Score {
     public void setAssists(int assists) { this.assists = assists; }
     public void setGold(int gold) { this.gold = gold; }
     public void setWon(boolean won) { this.won = won; }
+
+    @Override
+    public String toString() {
+        return "Score{" +
+                "kills=" + kills +
+                ", deaths=" + deaths +
+                ", assists=" + assists +
+                ", gold=" + gold +
+                ", won=" + won +
+                '}';
+    }
 }
