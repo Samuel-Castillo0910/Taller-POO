@@ -1,5 +1,6 @@
 package Main;
 
+import GameMode.GameMode;
 import Score.MatchStatus;
 import Score.PlayerScore;
 import Score.Score;
