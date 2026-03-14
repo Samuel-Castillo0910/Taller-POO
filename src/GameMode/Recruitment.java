@@ -1,4 +1,4 @@
-package Main;
+package GameMode;
 
 import Score.Score;
 

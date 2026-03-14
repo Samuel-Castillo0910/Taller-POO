@@ -1,7 +1,6 @@
-package Main;
+package GameMode;
 
 import Score.Score;
-import Score.ScoringSystem;
 
 public abstract class GameMode implements ScoringSystem {
 

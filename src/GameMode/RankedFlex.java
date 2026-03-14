@@ -1,23 +1,23 @@
-package Main;
+package GameMode;
 
 import Score.Score;
 
-public class RankedSoloDuo extends GameMode {
+public class RankedFlex extends GameMode {
 
     private int lpGainPerWin;
 
-    public RankedSoloDuo(int lpGainPerWin) {
-        super("Ranked Solo/Duo", 1, 2);
+    public RankedFlex(int lpGainPerWin) {
+        super("Ranked Flex", 1, 5);
         this.lpGainPerWin = lpGainPerWin;
     }
 
     @Override
     public int calculateScore(Score score) {
         if (score.isWon()) {
-            int kdaBonus = (int) (score.calculateKDA() * 5);
+            int kdaBonus = (int) (score.calculateKDA() * 3);
             return lpGainPerWin + kdaBonus;
         } else {
-            return -(lpGainPerWin / 2);
+            return -(lpGainPerWin / 3);
         }
     }
 
@@ -26,6 +26,6 @@ public class RankedSoloDuo extends GameMode {
 
     @Override
     public String toString() {
-        return "RankedSoloDuo{lpGainPerWin=" + lpGainPerWin + "}";
+        return "RankedFlex{lpGainPerWin=" + lpGainPerWin + "}";
     }
 }
