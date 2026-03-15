@@ -1,5 +1,6 @@
 package Main;
 
+import Exceptions.InvalidMatchException;
 import GameMode.GameMode;
 import Score.MatchStatus;
 import Score.PlayerScore;
@@ -27,7 +28,7 @@ public class Match {
 
 
     //FUNCIÓN PARA AÑADIR JUGADORES A LA PARTIDA
-    public void AddPlayer (Player player) {
+    public void addPlayer (Player player) {
         if (playerCount >= playerScores.length) {
             System.out.println("La partida está llena");
             return;
@@ -43,7 +44,7 @@ public class Match {
 
 
     //FUNCIÓN PARA QUITAR JUGADORES
-    public void RemovePlayer (int id){
+    public void removePlayer (int id){
         for (int i = 0; i < playerScores.length; i++){
             if (playerScores[i] != null && id == playerScores[i].getPlayer().getId()){
                 playerScores[i]=null;
@@ -61,11 +62,11 @@ public class Match {
     status = MatchStatus.IN_PROGRESS;
 }
 
-    public void EndMatch (){
+    public void endMatch (){
         status = MatchStatus.FINISHED;
     }
 
-    public Player FindPlayer(int id){
+    public Player findPlayer(int id){
         for (int i = 0; i < playerScores.length; i++){
             if (playerScores[i] != null && id == playerScores[i].getPlayer().getId()){
                 return playerScores[i].getPlayer();
