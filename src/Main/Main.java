@@ -97,56 +97,20 @@ public class Main {
         System.out.println("|     SIMULANDO ESTADISTICAS   |");
         System.out.println("================================");
 
-        // SoloDuo
-        matchSoloDuo.getPlayerScore(1).getScore().setKills(10);
-        matchSoloDuo.getPlayerScore(1).getScore().setDeaths(2);
-        matchSoloDuo.getPlayerScore(1).getScore().setAssists(8);
-        matchSoloDuo.getPlayerScore(1).getScore().setGold(15000);
-        matchSoloDuo.getPlayerScore(1).getScore().setWon(true);
+        //SoloDuo
+        matchSoloDuo.updatePlayerScores(1, 10, 2, 8, 15000, true);
+        matchSoloDuo.updatePlayerScores(8, 5, 5, 7, 8000, false);
 
-        matchSoloDuo.getPlayerScore(8).getScore().setKills(5);
-        matchSoloDuo.getPlayerScore(8).getScore().setDeaths(5);
-        matchSoloDuo.getPlayerScore(8).getScore().setAssists(7);
-        matchSoloDuo.getPlayerScore(8).getScore().setGold(8000);
-        matchSoloDuo.getPlayerScore(8).getScore().setWon(false);
+        //Flex
+        matchFlex.updatePlayerScores(3, 7, 1, 10, 13000, true);
+        matchFlex.updatePlayerScores(4, 5, 3, 6, 11000, true);
+        matchFlex.updatePlayerScores(7, 4, 4, 9, 10000, true);
 
-        // Flex
-        matchFlex.getPlayerScore(3).getScore().setKills(7);
-        matchFlex.getPlayerScore(3).getScore().setDeaths(1);
-        matchFlex.getPlayerScore(3).getScore().setAssists(10);
-        matchFlex.getPlayerScore(3).getScore().setGold(13000);
-        matchFlex.getPlayerScore(3).getScore().setWon(true);
+        //Recruitment
+        matchRecruitment.updatePlayerScores(2, 6, 2, 4, 9000, true);
+        matchRecruitment.updatePlayerScores(5, 2, 5, 3, 7000, false);
+        matchRecruitment.updatePlayerScores(6, 8, 0, 12, 14000, true);
 
-        matchFlex.getPlayerScore(4).getScore().setKills(5);
-        matchFlex.getPlayerScore(4).getScore().setDeaths(3);
-        matchFlex.getPlayerScore(4).getScore().setAssists(6);
-        matchFlex.getPlayerScore(4).getScore().setGold(11000);
-        matchFlex.getPlayerScore(4).getScore().setWon(true);
-
-        matchFlex.getPlayerScore(7).getScore().setKills(4);
-        matchFlex.getPlayerScore(7).getScore().setDeaths(4);
-        matchFlex.getPlayerScore(7).getScore().setAssists(9);
-        matchFlex.getPlayerScore(7).getScore().setGold(10000);
-        matchFlex.getPlayerScore(7).getScore().setWon(true);
-
-        // Recruitment
-        matchRecruitment.getPlayerScore(2).getScore().setKills(6);
-        matchRecruitment.getPlayerScore(2).getScore().setDeaths(2);
-        matchRecruitment.getPlayerScore(2).getScore().setAssists(4);
-        matchRecruitment.getPlayerScore(2).getScore().setGold(9000);
-        matchRecruitment.getPlayerScore(2).getScore().setWon(true);
-
-        matchRecruitment.getPlayerScore(5).getScore().setKills(2);
-        matchRecruitment.getPlayerScore(5).getScore().setDeaths(5);
-        matchRecruitment.getPlayerScore(5).getScore().setAssists(3);
-        matchRecruitment.getPlayerScore(5).getScore().setGold(7000);
-        matchRecruitment.getPlayerScore(5).getScore().setWon(false);
-
-        matchRecruitment.getPlayerScore(6).getScore().setKills(8);
-        matchRecruitment.getPlayerScore(6).getScore().setDeaths(0);
-        matchRecruitment.getPlayerScore(6).getScore().setAssists(12);
-        matchRecruitment.getPlayerScore(6).getScore().setGold(14000);
-        matchRecruitment.getPlayerScore(6).getScore().setWon(true);
 
         // Terminar partidas
         matchSoloDuo.endMatch();
