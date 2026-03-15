@@ -60,18 +60,22 @@ public class Match {
         }
     }
 
-    //
+    //EMPIEZA UNA NUEVA PARTIDA
     public void startMatch() throws InvalidMatchException {
-    if (!mode.validateQueueSize(playerCount)) {
-        throw new InvalidMatchException("Jugadores insuficientes para iniciar la partida");
+        //SI LA PARTIDA TIENE MENOS O MAS JUGADORES DE LOS REQUERIDOS TIRA ESTE MENSAJE
+        if (!mode.validateQueueSize(playerCount)) {
+            throw new InvalidMatchException("Jugadores insuficientes para iniciar la partida");
     }
-    status = MatchStatus.IN_PROGRESS;
+        status = MatchStatus.IN_PROGRESS;
 }
 
+    //TERMINA LA PARTIDA
     public void endMatch (){
         status = MatchStatus.FINISHED;
     }
 
+
+    //BUSCA UN JUGADOR
     public Player findPlayer(int id){
         for (int i = 0; i < playerScores.length; i++){
             if (playerScores[i] != null && id == playerScores[i].getPlayer().getId()){
@@ -82,6 +86,8 @@ public class Match {
         return null;
     }
 
+
+    //RETORNA EL PLAYERSCORE DEL ID DADO
     public PlayerScore getPlayerScore(int id) {
         for (int i = 0; i < playerScores.length; i++) {
             if (playerScores[i] != null && id == playerScores[i].getPlayer().getId()) {
@@ -91,6 +97,8 @@ public class Match {
         return null;
     }
 
+
+    //ACTUALIZA LOS DATOS DEL SCORE
     public PlayerScore updatePlayerScores(int id, int kills, int deaths, int assists, int gold, boolean won) {
 
         for (int i = 0; i < playerScores.length; i++){
