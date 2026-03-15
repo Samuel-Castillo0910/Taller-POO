@@ -33,18 +33,23 @@ public class Match {
             System.out.println("La partida está llena");
             return;
         }
+        //FOR PARA QUE EL PRIMER ELEMENTO DEL ARREGLO QUE DETECTE COMO NULL, CREE UN OBJETO AHI
         for (int i = 0; i < playerScores.length; i++) {
             if (playerScores[i] == null) {
                 playerScores[i] = new PlayerScore(player, new Score(0, 0, 0, 0, false));
                 playerCount++;
                 break;
-            } //FOR PARA QUE EL PRIMER ELEMENTO DEL ARREGLO QUE DETECTE COMO NULL, CREE UN OBJETO AHI
+            }
         }
     }
 
 
     //FUNCIÓN PARA QUITAR JUGADORES
     public void removePlayer (int id){
+        /*
+        FOR PARA QUE BUSQUE EN EL ARREGLO UN PLAYER CON EL ID INDICADO
+        (EL != NULL ES PARA QUE NO BUSQUE EN LOS ELEMENTOS NULOS)
+        */
         for (int i = 0; i < playerScores.length; i++){
             if (playerScores[i] != null && id == playerScores[i].getPlayer().getId()){
                 playerScores[i]=null;
@@ -55,6 +60,7 @@ public class Match {
         }
     }
 
+    //
     public void startMatch() throws InvalidMatchException {
     if (!mode.validateQueueSize(playerCount)) {
         throw new InvalidMatchException("Jugadores insuficientes para iniciar la partida");
@@ -84,6 +90,22 @@ public class Match {
         }
 
         System.out.println("No tiene estadisticas");
+        return null;
+    }
+
+    public PlayerScore updatePlayerScores(int id, int kills, int deaths, int assists, int gold, boolean won) {
+
+        for (int i = 0; i < playerScores.length; i++){
+            if (playerScores[i] != null && id == playerScores[i].getPlayer().getId()){
+                playerScores[i].getScore().setKills(kills);
+                playerScores[i].getScore().setDeaths(deaths);
+                playerScores[i].getScore().setAssists(assists);
+                playerScores[i].getScore().setGold(gold);
+                playerScores[i].getScore().setWon(won);
+
+                return playerScores[i];
+            }
+        }
         return null;
     }
 
