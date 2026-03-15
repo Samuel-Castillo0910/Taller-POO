@@ -54,9 +54,12 @@ public class Match {
         }
     }
 
-    public void StartMatch (){
-        status = MatchStatus.IN_PROGRESS;
+    public void startMatch() throws InvalidMatchException {
+    if (!mode.validateQueueSize(playerCount)) {
+        throw new InvalidMatchException("Jugadores insuficientes para iniciar la partida");
     }
+    status = MatchStatus.IN_PROGRESS;
+}
 
     public void EndMatch (){
         status = MatchStatus.FINISHED;
