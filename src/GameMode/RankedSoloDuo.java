@@ -14,10 +14,9 @@ public class RankedSoloDuo extends GameMode {
     @Override
     public int calculateScore(Score score) {
         if (score.isWon()) {
-            int kdaBonus = (int) (score.calculateKDA() * 5);
-            return lpGainPerWin + kdaBonus;
+            return lpGainPerWin;        // ej: +21
         } else {
-            return -(lpGainPerWin / 2);
+            return -(lpGainPerWin - 3); // ej: -18
         }
     }
 

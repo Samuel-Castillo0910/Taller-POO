@@ -14,10 +14,9 @@ public class RankedFlex extends GameMode {
     @Override
     public int calculateScore(Score score) {
         if (score.isWon()) {
-            int kdaBonus = (int) (score.calculateKDA() * 3);
-            return lpGainPerWin + kdaBonus;
+            return lpGainPerWin;        // ej: +30
         } else {
-            return -(lpGainPerWin / 3);
+            return -(lpGainPerWin - 8); // ej: -22
         }
     }
 
