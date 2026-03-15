@@ -82,14 +82,12 @@ public class Match {
         return null;
     }
 
-    public PlayerScore getPlayerScore(int id){
-        for (int i = 0; i < playerScores.length; i++){
-            if (playerScores[i] != null && id == playerScores[i].getPlayer().getId()){
+    public PlayerScore getPlayerScore(int id) {
+        for (int i = 0; i < playerScores.length; i++) {
+            if (playerScores[i] != null && id == playerScores[i].getPlayer().getId()) {
                 return playerScores[i];
             }
         }
-
-        System.out.println("No tiene estadisticas");
         return null;
     }
 

@@ -10,21 +10,23 @@ public class Player {
     private boolean active;
     private Rank rank;
     private String nickname;
+    private Role role;
 //Constructor de la clase
-    public Player(int id, int level, String nickname){
-        this.id = id;
-        this.nickname = nickname;
-        setLevel(level);
-        this.wins = 0;
-        this.losses = 0;
-        this.active = true;
-        this.rank = Rank.IRON;
-    }
+public Player(int id, int level, String nickname, Rank rank, Role role) {
+    this.id = id;
+    this.nickname = nickname;
+    this.rank = rank;
+    this.role = role;
+    this.wins = 0;
+    this.losses = 0;
+    this.active = true;
+    setLevel(level);
+}
 //getters y setters
     public int getId() {
         return id;
     }
-
+    public Role getRole() { return role; }
 
     public int getLevel() {
         return level;

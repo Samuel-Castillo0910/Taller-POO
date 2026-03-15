@@ -10,10 +10,11 @@ public class Recruitment extends GameMode {
 
     @Override
     public int calculateScore(Score score) {
-        int kdaPoints = (int) (score.calculateKDA() * 10);
-        int goldPoints = score.getGold() / 100;
-        int winBonus = score.isWon() ? 50 : 0;
-        return kdaPoints + goldPoints + winBonus;
+        if (score.isWon()) {
+            return 50;  // puntaje fijo por victoria
+        } else {
+            return 0;   // sin penalización
+        }
     }
 
     @Override

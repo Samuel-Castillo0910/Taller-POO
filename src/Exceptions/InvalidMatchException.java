@@ -1,6 +1,6 @@
 package Exceptions;
 
-public class InvalidMatchException extends Exception {
+public class InvalidMatchException extends RuntimeException {
     public InvalidMatchException(String message) {
         super(message);
     }
