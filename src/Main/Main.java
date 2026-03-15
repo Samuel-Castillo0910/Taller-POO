@@ -130,7 +130,6 @@ public class Main {
 
         for (int i = 0; i < manager.getPlayers().length; i++) {
             if (players[i] != null && players[i].isActive()) {
-                // Muestra nombre, rol y rango del jugador
                 System.out.println("Jugador: " + players[i].getNickname()
                         + " | Rol: "    + players[i].getRole()
                         + " | Rango: "  + players[i].getRank()
@@ -144,10 +143,13 @@ public class Main {
                                 m.getPlayerScore(players[i].getId()).getScore());
                         double kdaRedondeado = (int)(kda * 100) / 100.0;
 
-                        System.out.println("  KDA: " + kdaRedondeado
-                                + " | Puntaje: " + lp
-                                + " | Gano: " + m.getPlayerScore(players[i].getId())
-                                .getScore().isWon());
+                        System.out.println("  Kills: "    + m.getPlayerScore(players[i].getId()).getScore().getKills()
+                                + " | Deaths: "  + m.getPlayerScore(players[i].getId()).getScore().getDeaths()
+                                + " | Assists: " + m.getPlayerScore(players[i].getId()).getScore().getAssists()
+                                + " | Gold: "    + m.getPlayerScore(players[i].getId()).getScore().getGold()
+                                + " | KDA: "     + kdaRedondeado
+                                + " | LP: "      + lp
+                                + " | Gano: "    + m.getPlayerScore(players[i].getId()).getScore().isWon());
                     }
                 }
                 System.out.println();
